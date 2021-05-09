@@ -10,7 +10,7 @@ import time
 
 import tensorflow as tf
 import random
-from tensorflow.contrib.framework import arg_scope
+# from tensorflow.contrib.framework import arg_scope
 import numpy as np
 from data import dataIterator, load_dict, prepare_data
 import copy
@@ -535,7 +535,7 @@ def main(args):
                 next_p, next_w, next_state, next_alpha_past = session.run([p, w, h, alpha], feed_dict=input_dict)
     
                 if stochastic:
-                    if argmax:
+                    if np.argmax:
                         nw = next_p[0].argmax()
                     else:
                         nw = next_w[0]
